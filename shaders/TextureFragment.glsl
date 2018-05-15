@@ -1,5 +1,9 @@
+///THIS SHADER BELONGS TO RICHARD SOUTHERN
+
+
 #version 420                                            // Keeping you on the bleeding edge!
 #extension GL_EXT_gpu_shader4 : enable
+
 
 // Attributes passed on from the vertex shader
 smooth in vec3 WSVertexPosition;

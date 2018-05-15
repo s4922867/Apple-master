@@ -39,19 +39,14 @@ NGLScene::NGLScene()
     m_redrawTimer=startTimer(20);
     // now clear the key set
     m_keysPressed.clear();
-
     //the number of apples loaded in
     n_apples=1;
-
     //speed that the basket travesls at
     s_basketUpdate=0.6;
-
     //speed that the apples travel at
     s_appleUpdate=0.4;
-
     // the players score, this will get higher each time the player catches an apple
     score=0;
-
     //this is the players health, it decreases each time the player fails to catch an apple
     health=100;
 

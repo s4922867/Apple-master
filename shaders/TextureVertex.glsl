@@ -1,3 +1,6 @@
+///THIS SHADER BELONGS TO RICHARD SOUTHERN
+
+
 #version 420                                            // Keeping you on the bleeding edge!
 #extension GL_EXT_gpu_shader4 : enable
 //#extension GL_ARB_shading_language_420pack: enable    // Use for GLSL versions before 420.
