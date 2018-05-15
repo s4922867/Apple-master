@@ -122,7 +122,7 @@ void NGLScene::initializeGL()
     //initializes the text that is going to be on screen
     m_lineText.reset(new ngl::Text(QFont("Font", 20)));
     m_lineText->setScreenSize(width(), height());
-    m_lineText->setColour(1, 0, 0);
+    m_lineText->setColour(0, 0, 0);
 
     m_gameOverText.reset(new ngl::Text(QFont("Font", 50)));
     m_gameOverText->setScreenSize(width(), height());
@@ -139,7 +139,6 @@ void NGLScene::paintGL()
     // clear the screen and depth buffer
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glViewport(0,0,m_win.width,m_win.height);
-    //glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
 
 
     //checks if the game is over
@@ -180,10 +179,10 @@ void NGLScene::paintGL()
           //reads the files
           scoreFile>>readScore;
 
-          //appends players name and score the container
+          //appends players score the container
           m_highScore.push_back(score);
 
-          //writes the scores and names to a file
+          //if the player beats the high score the game writes the players score to the file
           if (score>readScore)
           {
               outfile.open(filePath);
@@ -193,6 +192,7 @@ void NGLScene::paintGL()
 
           m_saved = true;
 
+          //shows the player the high score
           m_lineText->renderText((1024/2)-200,(720/2)+100, " THE HIGH SCORE IS");
           m_lineText->renderText((1024/2)+100,(720/2)+100,  QString::number(readScore));
     }
